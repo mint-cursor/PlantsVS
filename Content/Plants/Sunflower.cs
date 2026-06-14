@@ -6,14 +6,11 @@ using Terraria.ModLoader;
 namespace PlantsVS.Content.Plants
 {
 
-	public class Peashooter : BasePeashooter
+	public class Sunflower : GenericStemPlant
 	{
-        public override int SunCost => 25;
+        public override int SunCost => 50;
 
-        public override void HeadDrawExtensions(ref DrawData HeadDrawData){
-			HeadRotationToTargetDraw(ref HeadDrawData);
-			ShootSquish(ref HeadDrawData);
-        }
+        public override void HeadDrawExtensions(ref DrawData HeadDrawData) {return;}
 
         public override void SetDefaults() {
             base.SetDefaults();
@@ -23,12 +20,12 @@ namespace PlantsVS.Content.Plants
     }
 
 
-	public class PeashooterItem: BaseSummonItem
+	public class SunflowerItem: BaseSummonItem
 	{
 		public override void SetDefaults() {
 			base.SetDefaults();
 			Item.damage = 2;
-			Item.shoot = ModContent.ProjectileType<Peashooter>();
+			Item.shoot = ModContent.ProjectileType<Sunflower>();
 		}
 	}
 

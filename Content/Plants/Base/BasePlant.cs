@@ -14,7 +14,8 @@ namespace PlantsVS.Content.Plants.Base
         // Drawing related variable and functions
         public Texture2D RequestTexture { get => TextureAssets.Projectile[Type].Value; }
         public float GeneralAnimSpeed = 3;
-        public static ref float GlobalTimer => ref Main.GlobalTimeWrappedHourly;
+        public float GlobalTimeRandomOffset = Main.rand.Next(0, 200);
+        public float GlobalTimer => Main.GlobalTimeWrappedHourly + GlobalTimeRandomOffset;
 
         public Vector2 BasePos { 
             get => Projectile.position - Main.screenPosition + 
@@ -22,7 +23,7 @@ namespace PlantsVS.Content.Plants.Base
         }
 
         // Ai related variable and functions
-        public NPC? ProjTarget = null;
+        public NPC ProjTarget = null;
 
         protected bool JustSpawned {
 			get => Projectile.localAI[0] == 0;
@@ -38,6 +39,24 @@ namespace PlantsVS.Content.Plants.Base
 				}
 			}
 		}
+
+        public virtual void JustSpawnedExtensions() {return;}
+
+        public override void AI()
+        {
+            if (JustSpawned) {
+                JustSpawnedExtensions();
+				JustSpawned = false;
+            }
+
+            // Gravity moment
+            Projectile.velocity.X = 0f;
+		    Projectile.velocity.Y += 0.2f;
+		    if (Projectile.velocity.Y > 16f) { 
+                Projectile.velocity.Y = 16f; 
+            }
+        }
+
 
         // Interaction with the cursor and stuff
         public override void PostDraw(Color lightColor)

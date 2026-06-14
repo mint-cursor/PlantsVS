@@ -6,6 +6,11 @@ Items: {
 		DisplayName: Peashooter Item
 		Tooltip: ""
 	}
+
+	SunflowerItem: {
+		Tooltip: ""
+		DisplayName: Sunflower Item
+	}
 }
 
 Projectiles: {
@@ -13,6 +18,7 @@ Projectiles: {
 	CommonPea.DisplayName: Common Pea
 	PlaceCheck.DisplayName: Place Check
 	PlantPlaceCheck.DisplayName: Plant Place Check
+	Sunflower.DisplayName: Sunflower
 }
 
 DamageClasses.PlantClass.DisplayName: Plant Class
