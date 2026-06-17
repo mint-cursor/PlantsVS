@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent;
+using Terraria.Graphics.Shaders;
 using Terraria.ModLoader;
 using Terraria.UI;
 

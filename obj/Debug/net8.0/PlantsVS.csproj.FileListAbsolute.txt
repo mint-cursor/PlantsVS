@@ -10,3 +10,4 @@
 /home/menta/.local/share/Terraria/tModLoader/ModSources/PlantsVS/obj/Debug/net8.0/refint/PlantsVS.dll
 /home/menta/.local/share/Terraria/tModLoader/ModSources/PlantsVS/obj/Debug/net8.0/PlantsVS.pdb
 /home/menta/.local/share/Terraria/tModLoader/ModSources/PlantsVS/obj/Debug/net8.0/ref/PlantsVS.dll
+/home/menta/.local/share/Terraria/tModLoader/ModSources/PlantsVS/obj/Debug/net8.0/PlantsVS.sourcelink.json

@@ -8,7 +8,7 @@ namespace PlantsVS.Content.Plants.Base
 {
 	abstract public partial class BasePeashooter : GenericStemPlant
 	{
-        public float SquishTimer = 0;
+        public int SquishTimer = 0;
         const int SquishDuration = 40;
 
         public void ShootSquish(ref DrawData HeadSquishDrawdata)
@@ -17,10 +17,10 @@ namespace PlantsVS.Content.Plants.Base
                 return;
             }
             
-            SquishTimer -= (float)(180 * Main.gameTimeCache.ElapsedGameTime.TotalSeconds);
-
-            HeadSquishDrawdata.scale.Y -= SquishTimer / SquishDuration * 0.5f;
-            HeadSquishDrawdata.scale.X += SquishTimer / SquishDuration * 0.2f;
+            SquishTimer -= 1;
+            
+            HeadSquishDrawdata.scale.Y -= MathHelper.SmoothStep(0f, 0.2f, (float)SquishTimer / SquishDuration);
+            HeadSquishDrawdata.scale.X += MathHelper.SmoothStep(0f, 0.5f, (float)SquishTimer / SquishDuration);
         }
     }
 }

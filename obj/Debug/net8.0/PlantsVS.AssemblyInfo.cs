@@ -10,10 +10,9 @@
 using System;
 using System.Reflection;
 
+[assembly: System.Runtime.CompilerServices.IgnoresAccessChecksToAttribute("tModLoader")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("PlantsVS")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93036f6de05c647671900fe62b9e90e4c12dae39")]
 [assembly: System.Reflection.AssemblyProductAttribute("PlantsVS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PlantsVS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

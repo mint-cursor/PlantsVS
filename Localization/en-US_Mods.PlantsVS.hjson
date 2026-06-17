@@ -11,15 +11,30 @@ Items: {
 		Tooltip: ""
 		DisplayName: Sunflower Item
 	}
+
+	AlmanacBook: {
+		DisplayName: Almanac
+		Tooltip:
+			'''
+			An encyclopedia of plants and their peculiarities!
+			Hover over a plant to check it's status
+			'Read, neighbor!'
+			'''
+	}
 }
 
 Projectiles: {
-	Peashooter.DisplayName: Peashooter
+	Peashooter.DisplayName: "[c/6AE730:Peashooter]"
 	CommonPea.DisplayName: Common Pea
 	PlaceCheck.DisplayName: Place Check
 	PlantPlaceCheck.DisplayName: Plant Place Check
-	Sunflower.DisplayName: Sunflower
+	Sunflower.DisplayName: "[c/FFBA00:Sunflower]"
 }
 
 DamageClasses.PlantClass.DisplayName: Plant Class
 UI.ExampleResource: Mods.PlantsVS.UI.ExampleResource
+Alamanac.Base:
+	'''
+	{0} {1}
+	{2}
+	'''

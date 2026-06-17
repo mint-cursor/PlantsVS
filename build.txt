@@ -1,3 +1,5 @@
 displayName = PlantsVS!
 author = MintCursor
 version = 0.1
+
+buildIgnore = .tml-build\*, lib\*, .idea\*, .vs\*, *.tmp, Assets\Effects\Compiler\*, Properties\*, *.csproj, *.user, obj\*, bin\*, *.config, LICENSE, .editorconfig, TemplateEngineHost\*

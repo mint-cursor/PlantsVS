@@ -33,7 +33,7 @@ namespace PlantsVS.Content.Plants.Base
                         $"{nameof(PlantsVS)}: {nameof(PlacementVisual)}",
                         () =>
                         {
-                            if (Main.LocalPlayer.HeldItem.ModItem is BaseSummonItem)
+                            if (Main.LocalPlayer.HeldItem.ModItem is BaseSummonItem && !Main.gamePaused)
                             {
                                 DrawPlacementVisual(Main.spriteBatch);
                             }

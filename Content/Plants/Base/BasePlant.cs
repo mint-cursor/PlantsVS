@@ -1,9 +1,11 @@
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using PlantsVS.Content.Almanac;
 using PlantsVS.Content.PVSystem;
 using Terraria;
 using Terraria.GameContent;
+using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace PlantsVS.Content.Plants.Base
@@ -42,6 +44,8 @@ namespace PlantsVS.Content.Plants.Base
 
         public virtual void JustSpawnedExtensions() {return;}
 
+        
+
         public override void AI()
         {
             if (JustSpawned) {
@@ -61,8 +65,25 @@ namespace PlantsVS.Content.Plants.Base
         // Interaction with the cursor and stuff
         public override void PostDraw(Color lightColor)
         {
+            if (Main.gamePaused) return;
             if (Projectile.Hitbox.Contains(Main.MouseWorld.ToPoint())) {
+
                 Main.LocalPlayer.cursorItemIconEnabled = true;
+
+                if (Main.LocalPlayer.HeldItem.ModItem is AlmanacBook)
+                {
+                    Main.LocalPlayer.cursorItemIconID = -1;
+                    LocalizedText BaseText = Language.GetText("Mods.PlantsVS.Alamanac.Base");
+
+                    string DamageText = null;
+                    if (Projectile.damage > 0){
+                        DamageText = "\n  Damage: " + Projectile.damage.ToString();
+                    }
+
+                    Main.LocalPlayer.cursorItemIconText = BaseText.Format([DisplayName, DamageText, ""]);
+                    return;
+                }
+
                 Main.LocalPlayer.cursorItemIconID = ModContent.ItemType<PeashooterItem>();
 
                 if (Main.mouseRight && Main.mouseRightRelease && Player.BlockInteractionWithProjectiles == 0)

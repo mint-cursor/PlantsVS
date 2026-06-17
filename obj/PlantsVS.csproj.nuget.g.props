@@ -7,9 +7,22 @@
     <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/menta/.nuget/packages/</NuGetPackageRoot>
     <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/menta/.nuget/packages/</NuGetPackageFolders>
     <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
-    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.8.2</NuGetToolVersion>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">7.0.0</NuGetToolVersion>
   </PropertyGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/home/menta/.nuget/packages/" />
   </ItemGroup>
+  <ItemGroup Condition=" '$(Language)' == 'C#' AND '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Compile Include="$(NuGetPackageRoot)krafs.publicizer/2.3.0/contentfiles/cs/any/Publicizer/IgnoresAccessChecksToAttribute.cs" Condition="Exists('$(NuGetPackageRoot)krafs.publicizer/2.3.0/contentfiles/cs/any/Publicizer/IgnoresAccessChecksToAttribute.cs')">
+      <NuGetPackageId>Krafs.Publicizer</NuGetPackageId>
+      <NuGetPackageVersion>2.3.0</NuGetPackageVersion>
+      <NuGetItemType>Compile</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>Publicizer/IgnoresAccessChecksToAttribute.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)krafs.publicizer/2.3.0/build/Krafs.Publicizer.props" Condition="Exists('$(NuGetPackageRoot)krafs.publicizer/2.3.0/build/Krafs.Publicizer.props')" />
+  </ImportGroup>
 </Project>

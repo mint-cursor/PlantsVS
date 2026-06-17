@@ -50,7 +50,6 @@ namespace PlantsVS.Content.Plants.Base
 
                 if (CheckRect.Intersects(proj.Hitbox))
                 {
-                    Main.NewText(proj.Hitbox);
                     Rectangle WarnRect = new((int)CheckPosition.X, (int)CheckPosition.Y, 1, 1);
 					CombatText.NewText(WarnRect, Color.Red, "Space is already occupied!", false, true);
                     return false;

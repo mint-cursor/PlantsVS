@@ -24,7 +24,6 @@ namespace PlantsVS.Content.Plants
 	{
 		public override void SetDefaults() {
 			base.SetDefaults();
-			Item.damage = 2;
 			Item.shoot = ModContent.ProjectileType<Sunflower>();
 		}
 	}
