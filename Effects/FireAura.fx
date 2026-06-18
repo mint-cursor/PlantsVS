@@ -17,10 +17,15 @@ float4 uShaderSpecificData;
 float4 main(float4 sampleColor : COLOR0, float2 coords : TEXCOORD0) : COLOR0
 {
     float4 color = tex2D(uImage0, coords);
-    float2 noise_coords = coords + float2(uTime * 10, uTime * 10);
-    float4 noise = tex2D(uImage1, coords);
 
-    return color * noise;
+    float2 noise_coords =  float2(coords.x, coords.y + uTime);
+    float4 noise = tex2D(uImage1, noise_coords);
+
+    float4 finalColor = color * noise;
+    
+    finalColor *= float4(0.0, 1.0, 0.2, step(0.5, finalColor.r));
+
+    return finalColor;
 }
 
 technique Technique1
