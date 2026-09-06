@@ -211,6 +211,16 @@
         "build": {
           "build/tModLoader.targets": {}
         }
+      },
+      "Daybreak/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Daybreak.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Daybreak.dll": {}
+        }
       }
     }
   },
@@ -234,7 +244,7 @@
       ]
     },
     "tModLoader/2026.4.3": {
-      "sha512": "VD0YLaIa8uLDi/PcDcbfJyPnKjmfP3/W6BMJDU26o+A3Z7skfeuckUspYtNtKDfIDHBS02be+gblz7+F1L/HbQ==",
+      "sha512": "vJxdxsRDiMUhglMLpmKLI3ZHOt5X9XpncD6UPaEUxrRw+gkMjIx3dwAr80NwOHH9ob6JAYklmStsXc3knH1rEA==",
       "type": "package",
       "path": "tmodloader/2026.4.3",
       "files": [
@@ -400,40 +410,50 @@
         "tmodloader.2026.4.3.nupkg.sha512",
         "tmodloader.nuspec"
       ]
+    },
+    "Daybreak/1.0.0": {
+      "type": "project",
+      "path": "../daybreak-mod/src/Daybreak/Daybreak.csproj",
+      "msbuildProject": "../daybreak-mod/src/Daybreak/Daybreak.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Daybreak >= 1.0.0",
       "Krafs.Publicizer >= 2.3.0",
       "tModLoader >= 2026.4.3"
     ]
   },
   "packageFolders": {
-    "/home/menta/.nuget/packages/": {}
+    "C:\\Users\\W10\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/menta/.local/share/Terraria/tModLoader/ModSources/PlantsVS/PlantsVS.csproj",
+      "projectUniqueName": "C:\\Users\\W10\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PlantsVS\\PlantsVS.csproj",
       "projectName": "PlantsVS",
-      "projectPath": "/home/menta/.local/share/Terraria/tModLoader/ModSources/PlantsVS/PlantsVS.csproj",
-      "packagesPath": "/home/menta/.nuget/packages/",
-      "outputPath": "/home/menta/.local/share/Terraria/tModLoader/ModSources/PlantsVS/obj/",
+      "projectPath": "C:\\Users\\W10\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PlantsVS\\PlantsVS.csproj",
+      "packagesPath": "C:\\Users\\W10\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\W10\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PlantsVS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/menta/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\W10\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "/home/menta/.local/share/tml-build/feed/": {},
+        "C:\\Users\\W10\\AppData\\Roaming\\tml-build\\feed\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\W10\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\daybreak-mod\\src\\Daybreak\\Daybreak.csproj": {
+              "projectPath": "C:\\Users\\W10\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\daybreak-mod\\src\\Daybreak\\Daybreak.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -446,7 +466,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "10.0.100"
+      "SdkAnalysisLevel": "10.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -476,18 +496,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.27, 8.0.27]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.108/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

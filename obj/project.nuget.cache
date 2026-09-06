@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "zyC/6lHRPOc=",
+  "dgSpecHash": "q770hP5fqHs=",
   "success": true,
-  "projectFilePath": "/home/menta/.local/share/Terraria/tModLoader/ModSources/PlantsVS/PlantsVS.csproj",
+  "projectFilePath": "C:\\Users\\W10\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\PlantsVS\\PlantsVS.csproj",
   "expectedPackageFiles": [
-    "/home/menta/.nuget/packages/krafs.publicizer/2.3.0/krafs.publicizer.2.3.0.nupkg.sha512",
-    "/home/menta/.nuget/packages/tmodloader/2026.4.3/tmodloader.2026.4.3.nupkg.sha512",
-    "/home/menta/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.27/microsoft.aspnetcore.app.ref.8.0.27.nupkg.sha512"
+    "C:\\Users\\W10\\.nuget\\packages\\krafs.publicizer\\2.3.0\\krafs.publicizer.2.3.0.nupkg.sha512",
+    "C:\\Users\\W10\\.nuget\\packages\\tmodloader\\2026.4.3\\tmodloader.2026.4.3.nupkg.sha512"
   ],
   "logs": []
 }

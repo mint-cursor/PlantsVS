@@ -1,67 +1,19 @@
-using System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using PlantsVS.Content.Almanac;
 using PlantsVS.Content.PVSystem;
 using Terraria;
-using Terraria.GameContent;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace PlantsVS.Content.Plants.Base
 {
-	abstract public class BasePlant : ModProjectile
+	public abstract partial class BasePlant : ModProjectile
 	{
-
-        // Drawing related variable and functions
-        public Texture2D RequestTexture { get => TextureAssets.Projectile[Type].Value; }
-        public float GeneralAnimSpeed = 3;
-        public float GlobalTimeRandomOffset = Main.rand.Next(0, 200);
-        public float GlobalTimer => Main.GlobalTimeWrappedHourly + GlobalTimeRandomOffset;
-
-        public Vector2 BasePos { 
-            get => Projectile.position - Main.screenPosition + 
-            new Vector2(Projectile.width / 2, Projectile.height);
-        }
-
-        // Ai related variable and functions
-        public NPC ProjTarget = null;
-
-        protected bool JustSpawned {
-			get => Projectile.localAI[0] == 0;
-			set => Projectile.localAI[0] = value ? 0 : 1;
-		}
-
-        protected void TryTargeting(NPC npc, ref float closestTargetDistance, ref NPC targetNPC) {
-			if (npc.CanBeChasedBy(this)) {
-				float distanceToTargetNPC = Vector2.Distance(Projectile.Center, npc.Center);
-				if (distanceToTargetNPC < closestTargetDistance && Collision.CanHit(Projectile.position, Projectile.width, Projectile.height, npc.position, npc.width, npc.height)) {
-					closestTargetDistance = distanceToTargetNPC;
-					targetNPC = npc;
-				}
-			}
-		}
-
-        public virtual void JustSpawnedExtensions() {return;}
-
-        
-
-        public override void AI()
+        public override void OnKill(int timeLeft)
         {
-            if (JustSpawned) {
-                JustSpawnedExtensions();
-				JustSpawned = false;
-            }
-
-            // Gravity moment
-            Projectile.velocity.X = 0f;
-		    Projectile.velocity.Y += 0.2f;
-		    if (Projectile.velocity.Y > 16f) { 
-                Projectile.velocity.Y = 16f; 
-            }
+	        Main.LocalPlayer.GetModPlayer<PlantPlayer>().CurrentSun += SunCost;
         }
-
-
+        
         // Interaction with the cursor and stuff
         public override void PostDraw(Color lightColor)
         {
@@ -73,9 +25,9 @@ namespace PlantsVS.Content.Plants.Base
                 if (Main.LocalPlayer.HeldItem.ModItem is AlmanacBook)
                 {
                     Main.LocalPlayer.cursorItemIconID = -1;
-                    LocalizedText BaseText = Language.GetText("Mods.PlantsVS.Alamanac.Base");
+                    LocalizedText BaseText = Language.GetText("Mods.PlantsVS.Almanac.Base");
 
-                    string DamageText = null;
+                    string? DamageText = null;
                     if (Projectile.damage > 0){
                         DamageText = "\n  Damage: " + Projectile.damage.ToString();
                     }
@@ -86,11 +38,7 @@ namespace PlantsVS.Content.Plants.Base
 
                 Main.LocalPlayer.cursorItemIconID = ModContent.ItemType<PeashooterItem>();
 
-                if (Main.mouseRight && Main.mouseRightRelease && Player.BlockInteractionWithProjectiles == 0)
-                {
-                    Main.LocalPlayer.GetModPlayer<PlantPlayer>().CurrentSun += SunCost;
-                    Projectile.Kill();
-                }
+                if (Main.mouseRight && Main.mouseRightRelease && Player.BlockInteractionWithProjectiles == 0) Projectile.Kill();
             }
         }
 
@@ -98,22 +46,17 @@ namespace PlantsVS.Content.Plants.Base
         public virtual int SunCost => 0;
         public override void SetDefaults() {
 			Projectile.DamageType = ModContent.GetInstance<PlantClass>();
-			Projectile.timeLeft = Projectile.SentryLifeTime;
 			Projectile.ignoreWater = true;
 			Projectile.netImportant = true;
             Projectile.scale = 2f;
 		}
 
+		public override bool OnTileCollide(Vector2 oldVelocity) => false;
         public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough, ref Vector2 hitboxCenterFrac) 
         {
             fallThrough = false; 
             return true;
         }
-		public override bool OnTileCollide(Vector2 oldVelocity) => false;
 
-        public static implicit operator BasePlant(Projectile v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

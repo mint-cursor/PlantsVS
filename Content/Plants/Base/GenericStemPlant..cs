@@ -15,14 +15,6 @@ namespace PlantsVS.Content.Plants.Base
 
         public override bool PreDraw(ref Color lightColor)
         {
-            PlantsVSCommon.EnterShaderRegion(Main.spriteBatch);
-            GameShaders.Misc["PlantsVS:FireAura"].Apply();
-
-            Texture2D FireAura = ModContent.Request<Texture2D>("PlantsVS/Effects/FireAuraMask").Value;
-            Main.spriteBatch.Draw(FireAura, Projectile.position - new Vector2(15,35) - Main.screenPosition, Color.White);
-
-            PlantsVSCommon.EnterShaderRegion(Main.spriteBatch);
-
             StemDraw(out DrawData SteamDrawData);
             Main.EntitySpriteDraw(SteamDrawData);
 
@@ -32,7 +24,7 @@ namespace PlantsVS.Content.Plants.Base
             HeadDraw(out DrawData HeadDrawData);
             HeadDrawExtensions(ref HeadDrawData);
             Main.EntitySpriteDraw(HeadDrawData);
-
+            
             return false;
         }
     }

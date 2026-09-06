@@ -1,14 +1,6 @@
-using System;
-using Microsoft.Xna.Framework;
-using PlantsVS.Content.Projectiles;
-using Terraria;
-using Terraria.Audio;
-using Terraria.ID;
-using Terraria.ModLoader;
-
 namespace PlantsVS.Content.Plants.Base
 {
-	abstract public partial class BasePeashooter : GenericStemPlant
+	public abstract partial class BasePeashooter : GenericStemPlant
 	{
         public ref float ShootTimer => ref Projectile.ai[0];
 

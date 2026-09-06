@@ -1,12 +1,9 @@
-using System;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
 using Terraria.DataStructures;
 
 namespace PlantsVS.Content.Plants.Base
 {
-	abstract public partial class BasePeashooter : GenericStemPlant
+	public abstract partial class BasePeashooter : GenericStemPlant
 	{
         public int SquishTimer = 0;
         const int SquishDuration = 40;

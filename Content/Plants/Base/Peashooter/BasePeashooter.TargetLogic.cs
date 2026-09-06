@@ -2,12 +2,12 @@ using Terraria;
 
 namespace PlantsVS.Content.Plants.Base
 {
-	abstract public partial class BasePeashooter : GenericStemPlant
+	public abstract partial class BasePeashooter : GenericStemPlant
 	{
         public void TargetLogic()
         {
             float closestTargetDistance = TargetingRange;
-			NPC targetNPC = null;
+			NPC? targetNPC = null;
 
 			if (Projectile.OwnerMinionAttackTargetNPC != null) {
 				TryTargeting(Projectile.OwnerMinionAttackTargetNPC, ref closestTargetDistance, ref targetNPC);

@@ -31,7 +31,7 @@ namespace PlantsVS.Content.Plants.Base
 
 		public static bool FindSpotToPlacePlant(int checkProj, out int worldX, out int worldY)
 		{
-			const int VerticalFloorCheck = 3;
+			const int verticalFloorCheck = 3;
 
 			Vector2 CheckPosition = PlantsVSCommon.PlantPlacePosition;
 			int posX = (int)(CheckPosition.X / 16f);
@@ -69,7 +69,7 @@ namespace PlantsVS.Content.Plants.Base
                 
 			// Check if there's valid floor to place the plant
  			for (int i = 0; i < 3; i++){
-				if (Main.tile[posX + i, posY + VerticalFloorCheck] == null || !WorldGen.SolidTile2(posX + i, posY + VerticalFloorCheck)){
+				if (Main.tile[posX + i, posY + verticalFloorCheck] == null || !WorldGen.SolidTile2(posX + i, posY + verticalFloorCheck)){
 					Rectangle WarnRect = new((int)CheckPosition.X, (int)CheckPosition.Y, 1, 1);
 					CombatText.NewText(WarnRect, Color.Red, "Invalid floor to place plant!", false, true);
 					return false;

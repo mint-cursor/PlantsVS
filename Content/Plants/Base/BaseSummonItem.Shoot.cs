@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace PlantsVS.Content.Plants.Base
 {
-	public abstract partial class BaseSummonItem : ModItem
+	public abstract partial class BaseSummonItem
 	{
 		public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback) {
             // Check if you have enough sun remaning to spawn the plant

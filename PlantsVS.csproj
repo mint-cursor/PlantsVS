@@ -2,12 +2,13 @@
 	
 	<!-- General -->
 	<PropertyGroup>
-		
 	</PropertyGroup>
 
 	<!-- References -->
 	<ItemGroup>
-	  <Folder Include="Properties\" />
+		<ProjectReference Include="..\daybreak-mod\src\Daybreak\Daybreak.csproj"/>
+		<ProjectReference Include="..\daybreak-mod\src\Daybreak.CodeAnalysis\Daybreak.CodeAnalysis.csproj" PrivateAssets="All" ReferenceOutputAssembly="false" OutputItemType="Analyzer"/>
+		<ProjectReference Include="..\daybreak-mod\src\Daybreak.SourceGen\Daybreak.SourceGen.csproj" PrivateAssets="All" ReferenceOutputAssembly="false" OutputItemType="Analyzer"/>
 	</ItemGroup>
 
 </Project>

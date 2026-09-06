@@ -2,9 +2,11 @@ using PlantsVS.Content.Plants.Base;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
+using BasePeashooter = PlantsVS.Content.Plants.Base.BasePeashooter;
 
 namespace PlantsVS.Content.Plants
 {
+	using BasePeashooter = global::PlantsVS.Content.Plants.Base.BasePeashooter;
 
 	public class Peashooter : BasePeashooter
 	{

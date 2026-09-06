@@ -12,8 +12,8 @@ using Terraria.UI;
 
 namespace PlantsVS.Content.Plants.Base
 {
-	public abstract partial class BaseSummonItem : ModItem
-	{
+	public abstract partial class BaseSummonItem
+    {
         private sealed class PlacementVisual : ModSystem
         {
             private static readonly Asset<Texture2D> placementArea =

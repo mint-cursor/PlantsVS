@@ -1,4 +1,3 @@
-using System;
 using Microsoft.Xna.Framework;
 using PlantsVS.Content.Projectiles;
 using Terraria;
@@ -8,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace PlantsVS.Content.Plants.Base
 {
-	abstract public partial class BasePeashooter : GenericStemPlant
+	public abstract partial class BasePeashooter : GenericStemPlant
 	{
         public void ShootingLogic()
         {
@@ -27,7 +26,7 @@ namespace PlantsVS.Content.Plants.Base
                         shootPos += shootDirection * 35;
 
 						Projectile.NewProjectile(Projectile.GetSource_FromThis(), shootPos, shootVelocity, type, Projectile.damage, 3, Projectile.owner);
-                        SquishTimer = SquishDuration;
+                        SquishTimer = Base.BasePeashooter.SquishDuration;
                         BlinkTimer = BlinkWindow;
 					}
 				}

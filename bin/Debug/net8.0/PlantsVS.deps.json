@@ -7,8 +7,43 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "PlantsVS/1.0.0": {
+        "dependencies": {
+          "Daybreak": "1.0.0"
+        },
         "runtime": {
           "PlantsVS.dll": {}
+        }
+      },
+      "Daybreak/1.0.0": {
+        "runtime": {
+          "Daybreak.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "BetterExpertRarity/1.0.0.0": {
+        "runtime": {
+          "BetterExpertRarity.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Luminance/1.0.0.0": {
+        "runtime": {
+          "Luminance.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "PrettyRarities/0.0.0.0": {
+        "runtime": {
+          "PrettyRarities.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
         }
       }
     }
@@ -16,6 +51,26 @@
   "libraries": {
     "PlantsVS/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Daybreak/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BetterExpertRarity/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Luminance/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PrettyRarities/0.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

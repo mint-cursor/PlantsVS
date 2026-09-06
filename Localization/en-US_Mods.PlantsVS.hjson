@@ -21,6 +21,16 @@ Items: {
 			'Read, neighbor!'
 			'''
 	}
+
+	TorchwoodItem: {
+		DisplayName: Torchwood Item
+		Tooltip: ""
+	}
+
+	WallnutItem: {
+		DisplayName: Wallnut Item
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -29,11 +39,13 @@ Projectiles: {
 	PlaceCheck.DisplayName: Place Check
 	PlantPlaceCheck.DisplayName: Plant Place Check
 	Sunflower.DisplayName: "[c/FFBA00:Sunflower]"
+	Torchwood.DisplayName: Torchwood
+	Wallnut.DisplayName: Wallnut
 }
 
 DamageClasses.PlantClass.DisplayName: Plant Class
 UI.ExampleResource: Mods.PlantsVS.UI.ExampleResource
-Alamanac.Base:
+Almanac.Base:
 	'''
 	{0} {1}
 	{2}
